@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Software engeering: What is Agile?"
-date: 2022-01-17 18:30:00
+date: 2022-01-18 13:50:00
 categories: Software engeering
 ---
 
