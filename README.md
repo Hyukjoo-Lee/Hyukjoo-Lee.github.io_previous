@@ -1,1 +1,1 @@
-First Blog
+Learning Record Blog
