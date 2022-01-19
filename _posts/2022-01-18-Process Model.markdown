@@ -10,7 +10,7 @@ categories: Software engeering
 (a) Linear Process Flow
 Communication &rarr; planning &rarr; Modeling &rarr; Implementation &rarr; Contruction &rarr; Deployment
 (b) Iterative Process Flow
-(Communication &rarr; planning) &rarr; (Modeling) &rarr; Implementation &rarr; Contruction &rarr; Deployment
+((Communication &rarr; planning) &rarr; (Modeling) &rarr; Implementation &rarr; Contruction) &rarr; Deployment
 
 ### Incremental Model for Prototype design
 
@@ -35,9 +35,6 @@ A system that can be executed and tested from the beginning of the project needs
 
 ![Spiral Model image](https://mblogthumb-phinf.pstatic.net/20140218_259/seilius_1392697072484Bg2UG_PNG/SpiralModel.png?type=w2 "Spiral Model image")
 
-## Regression testing
+### Regression testing
 
-- New features should not affect to previous development
-- Ensure that adding new features to evolutionary prototypes
-  does not accidentally break features working correctly in the
-  previous prototype
+- New features should not affect to previous development; Ensure that adding new features to evolutionary prototypes does not accidentally break features working correctly in the previous prototype
