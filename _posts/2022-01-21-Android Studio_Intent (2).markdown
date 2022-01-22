@@ -27,7 +27,7 @@ categories: Android Studio
 
 **Source Code**
 
-```JAVA
+```java
 // In MainActivity.java
     public void sendText(View view) {
 
@@ -41,7 +41,7 @@ categories: Android Studio
     }
 ```
 
-```JAVA
+```java
 // In SecondActivity.java
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +62,7 @@ categories: Android Studio
     }
 ```
 
-```JAVA
+```java
     ...
     // Return a String
     public void returnText(View view) {
@@ -81,7 +81,7 @@ categories: Android Studio
     }
 ```
 
-```JAVA
+```java
     // In MainActivity.java
 
     // ActivityResultLauncher: a launcher for a previously-prepared call to
@@ -101,7 +101,7 @@ categories: Android Studio
             });
 ```
 
-<h3 style="color:red">Implicit Intent</h1>
+<h3 style="color:red">Implicit Intent</h3>
 
 - You can execute the desired component with any intention.
 - Intents that do not specify the name of the component, but only contains a list of the features of the component to be called
@@ -113,7 +113,7 @@ categories: Android Studio
 
 **Source Code**
 
-```JAVA
+```java
     public void showWebPage(View view) {
 
         Intent intent = new Intent(Intent.ACTION_VIEW,
@@ -125,7 +125,7 @@ categories: Android Studio
 
 - Intent solution process finds two activities matched with implicit intent using the intent filter
 
-```JAVA
+```java
 // Another web view app
     private void handleIntent() {
         // Return the intent that started this activity

@@ -49,6 +49,7 @@ categories: Android Studio
 
     - Higher than 4.0
 
+    ```java
     android {
 
          ...
@@ -80,12 +81,13 @@ categories: Android Studio
          }
 
     }
+    ```
 
     2-2. activity
 
     #### Java
 
-    ```
+    ```java
     public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
@@ -132,7 +134,7 @@ rule : ActivityXXXBinding
 
 #### Kotlin
 
-```
+```java
 private lateinit var binding: ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -158,6 +160,7 @@ class MainActivity : AppCompatActivity() {
 
 ### In school class: Android Mobile App II
 
+```java
 in build.gradle(Module:) script
 
     android {
@@ -174,6 +177,7 @@ in build.gradle(Module:) script
          }
 
     }
+```
 
 - Build Menu -> Clean Project -> Rebuild Project
 
