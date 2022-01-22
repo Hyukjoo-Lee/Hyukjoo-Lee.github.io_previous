@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "SpringBoot & Vue.js"
+title: "Software Engineering: SpringBoot & Vue.js"
 date: 2022-01-18 13:50:00
 categories: Software Engineering
 ---

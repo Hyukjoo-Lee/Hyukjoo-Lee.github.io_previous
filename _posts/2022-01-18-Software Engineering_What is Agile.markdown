@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Agile"
+title: "Software Engineering: Agile"
 date: 2022-01-18 13:50:00
 categories: Software Engineering
 ---
