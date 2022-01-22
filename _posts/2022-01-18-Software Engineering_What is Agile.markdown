@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Software engeering: What is Agile?"
+title: "Agile"
 date: 2022-01-18 13:50:00
-categories: Software engeering
+categories: Software Engineering
 ---
 
 ### What is Agility?

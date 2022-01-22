@@ -2,7 +2,7 @@
 layout: default
 title: "Process Model"
 date: 2022-01-18 16:00:00
-categories: Software engeering
+categories: Software Engineering
 ---
 
 ### Process Flow

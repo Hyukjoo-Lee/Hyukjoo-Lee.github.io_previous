@@ -1,6 +1,11 @@
-### SpringBoot and Vue.js
+---
+layout: default
+title: "SpringBoot & Vue.js"
+date: 2022-01-18 13:50:00
+categories: Software Engineering
+---
 
-**What is SpringBoot?**
+### What is SpringBoot?
 
 - It is a framework that allows spring framework-based projects to be developed immediately without difficult settings or Web Application Server settings.
 
@@ -17,6 +22,61 @@
 View Templates: 화면출력(Presentation)
 Controller: 처리과정(logic)
 Model: 데이터(data)
+
+**MVC의 역할과 실행흐름**
+
+Controller : 클라이언트의 요청을 받음
+
+package com.example.firstproject.controller;
+
+```java
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class FirstController {
+
+	@GetMapping("/hi") // Request
+	public String niceToMeetYou(Model model) {
+		model.addAttribute("username", "이혁주");
+		return "greetings";
+	}
+}
+```
+
+View: 최종 페이지를 만들어 주고
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="ISO-8859-1" />
+    <title>Insert title here</title>
+  </head>
+  <body>
+    <h1>{{username}}님, 반갑습니다!</h1>
+  </body>
+</html>
+```
+
+Model: 데이터를 뷰에게 전달 함
+
+```java
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class FirstController {
+
+	@GetMapping("/hi")
+	public String niceToMeetYou(Model model) {
+		model.addAttribute("username", "이혁주"); // 데이터 등록 -> 뷰페이지 에서 사용 가능
+		return "greetings"; // temlplates/greeting.mustache -> 브라우저로 전송
+	}
+}
+```
 
 **Few Spring project dependencies (tools)**
 
