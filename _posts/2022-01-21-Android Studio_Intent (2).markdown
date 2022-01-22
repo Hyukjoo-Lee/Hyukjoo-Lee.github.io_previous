@@ -17,7 +17,7 @@ categories: Android Studio
 
 ### Explicit Intent &larr;&rarr; Implicit Intent
 
-<h3 style="color:red">Explicit Intent</h1>
+<h3 style="color:red">Explicit Intent</h3>
 
 - 실행하고자 하는 컴포넌트가 '명확' 할 때 사용
 - e.g. The operation intention itself are
