@@ -13,25 +13,25 @@ categories: Android Studio
 
 ### Main functions and features
 
-1. Authentication system
+<b>Authentication system</b>
 
 - Authentication is responsible for logging in within Firebase
 
 - Support such as security process, password search, ID search, password change, email authentication...etc
 
-2. Database based on NoSQL
+<b>Database based on NoSQL</b>
 
 - A fast and simple NoSQL-based database in the form of a document
 
 - Supports Real Time Stream Protocol (RTSP) databases (Send data in real time)
 
-3. Provides console
+<b>Provides console</b>
 
 - Server administrator page
 
 - Support for access security, MySQL (database), Node.JS server, Spring server ...etc
 
-4. Providde Analytics
+<b>Providde Analytics</b>
 
 - Statistical information on how users use the app
 

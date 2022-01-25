@@ -20,14 +20,14 @@ Initial planning &rarr; Planning &rarr; Requirements &rarr; Analysis & design &r
 
 ### Spiral Model for Prototype Design
 
-1. It consists of four sections which are repeated until a software is completed
+<b>It consists of four sections which are repeated until a software is completed</b>
 
 - Determine objective
 - Risk Analysis
 - Development and Test
 - Evaluatin / Plan the next Iteration
 
-2. Difference with prototype model
+<b>Difference with prototype model</b>
 
 A system that can be executed and tested from the beginning of the project needs to be developed and checked continuously.
 

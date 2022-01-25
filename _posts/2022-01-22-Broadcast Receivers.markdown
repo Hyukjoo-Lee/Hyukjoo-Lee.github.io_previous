@@ -38,24 +38,24 @@ categories: Android Studio
 
 **Creating a broadcast receiver**
 
-1. Register your receiver for system broadcasts
+<b>Register your receiver for system broadcasts</b>
 
 - Each system broadcast is wrapped in an Intent object: Contains event details like android.intent.action.battery_low, and also other data about the event in its extra field, for example a boolean extra indicating whether the battery is low or not
 
-- Static or Dynamic receiver
+<b>Static or Dynamic receiver</b>
 
-  1.  Static - Use the <receiver> element in your AndroidManifest.xml file (cannot use static receivers starting from API level 26 and higher)
+1.  Static - Use the <receiver> element in your AndroidManifest.xml file (cannot use static receivers starting from API level 26 and higher)
 
-  2.  Dynamic - use the app context or activity context
-      1. Delete the entire <receiver> element)
-      2. In MainActivity.java, create a CustomReceiver object as a member variable and initialize it
-      ```java
-      // In MainActivity.java
-      // Create CustomReceiver object
-      private CustomReceiver mReceiver = new CustomReceiver();
-      ```
+2.  Dynamic - use the app context or activity context
+    1. Delete the entire <receiver> element)
+    2. In MainActivity.java, create a CustomReceiver object as a member variable and initialize it
+    ```java
+    // In MainActivity.java
+    // Create CustomReceiver object
+    private CustomReceiver mReceiver = new CustomReceiver();
+    ```
 
-2. Create an intent filter with Intent actions
+<b>Create an intent filter with Intent actions</b>
 
 ```java
 // In MainActivity.java, at the end of onCreate() method
@@ -66,7 +66,7 @@ filter.addAction(Intent.ACTION_POWER_DISCONNECTED);
 filter.addAction(Intent.ACTION_POWER_CONNECTED);
 ```
 
-3. Register and unregister the receiver
+<b>Register and unregister the receiver</b>
 
 ```java
 // In MainActivity.java, at the end of onCreate() method
@@ -85,7 +85,7 @@ this.registerReceiver(mReceiver, filter);
    }
 ```
 
-4. Implement onReceive() in your BroadcastReceiver
+<b>Implement onReceive() in your BroadcastReceiver</b>
 
 ```java
 // In CustomReceiver.java
@@ -114,7 +114,7 @@ public void onReceive(Context context, Intent intent) {
 
 **Send and receive a custom broadcast**
 
-1. Define your custom broadcast action string
+<b>Define your custom broadcast action string</b>
 
 - Create a constant member variable in both your MainActivity and your CustomReceiver class
 
@@ -123,11 +123,11 @@ private static final String ACTION_CUSTOM_BROADCAST =
 BuildConfig.APPLICATION_ID + ".ACTION_CUSTOM_BROADCAST";
 ```
 
-2. Add a send custom broadcast
+<b>Add a send custom broadcast</b>
 
 android:onClick="sendCustomBroadcast"
 
-3. Extract the string resource
+<b> Extract the string resource</b>
 
 - Create ‘sendCustomBroadcast(View)' in MainActivity.java
 
@@ -142,7 +142,7 @@ Intent customBroadcastIntent = new Intent(ACTION_CUSTOM_BROADCAST);
 LocalBroadcastManager.getInstance(this).sendBroadcast (customBroadcastIntent);
 ```
 
-4. Register and unregister your custom broadcast
+<b>Register and unregister your custom broadcast</b>
 
 - Register the action in onCreate() and unregister it in onDestroy()
 
@@ -159,7 +159,7 @@ LocalBroadcastManage.getInstance(this).registerReceiver(mReceiver, new IntentFil
 LocalBroadcastManager.getInstance(this).unregisterReceiver(mReceiver);
 ```
 
-5. Respond to the custom broadcast
+<b>Respond to the custom broadcast</b>
 
 In CustomReceiver.java, inside the onReceive() method, add another case statement in the switch block
 
