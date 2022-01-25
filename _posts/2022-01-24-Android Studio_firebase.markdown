@@ -39,9 +39,9 @@ categories: Android Studio
 
 ### How to set firebase in Android Studio
 
-1. Create a project in firebase web page, and add jason file to the app
+1st. Create a project in firebase web page, and add jason file to the app
 
-2. in build.gradle(Project), add google() repository if you do not have & add dependencies classpath 'com.google.gms:google-services:4.3.10'
+2nd. in build.gradle(Project), add google() repository if you do not have & add dependencies classpath 'com.google.gms:google-services:4.3.10'
 
 ```java
 // build.gradle (project)
@@ -62,7 +62,7 @@ buildscript {
 }
 ```
 
-3. in another build.gradle(Module), add google-servies plugin & add up-to-date dependencies (Now: 1/24/2022)
+3rd. in another build.gradle(Module), add google-servies plugin & add up-to-date dependencies (Now: 1/24/2022)
 
 ```java
 plugins {
@@ -89,7 +89,7 @@ dependencies {
 }
 ```
 
-4. Test Real Time Stream Protocol (RTSP) databases
+4th. Test Real Time Stream Protocol (RTSP) databases
 
 - Create a class (database name)
 
@@ -157,3 +157,9 @@ public class Users {
 
 }
 ```
+
+<em>Reference</em>
+
+[firebase setup][firebase setup]
+
+[firebase setup]: https://firebase.google.com/docs/android/setup
