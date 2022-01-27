@@ -7,7 +7,7 @@ categories: JavaScript
 
 ### What is DOM manipulation
 
-- Browser API to interact with the browser usgin code
+- Browser API to interact with the browser using code
 
 <em>It prodive you to do:</em>
 
@@ -44,7 +44,7 @@ const paragraphs = document.querySelectorAll(`p`);
 const divs = document.querySelectorAll(`div`);
 ```
 
-- querySelectorAll() - to get a collection of DOM elements &rarr; Need to convert a a collection of DOM elements to as arrays
+- querySelectorAll() - to get a collection of DOM elements &rarr; Need to convert a collection of DOM elements to as an array
 
 ```javascript
 const headers = Array.from(document.querySelectorAll(`p`));
@@ -88,7 +88,7 @@ link.innerHTML = `<strong>Hi</strong>`;
 
 const h2 = document.querySelector(`h2`);
 
-// Override the class and add a new one
+// Override the class and add a new innerHTML
 h2.className = `post-title hidden`;
 h2.innerHTML = `NEW HEADING`;
 ```
@@ -114,14 +114,24 @@ header.classList.remove(`main`);
 
 - To completely replace the class string, you would use className
 
-- InsertAdjacentHTML() &rarr; allows us select an existing element on the page and add our element before it, inside it, or after it.
+- insertAdjacentHTML() &rarr; allows us select an existing element on the page and add our element before it, inside it, or after it.
 
-  - InsertAdjacentHTML(beforebegin) - outside of selected tag, before begin of tage
-  - afterend - outside of selected tag, after end of tag
-  - beforeend - inside selected tag, at the end of innerText
-  - afterbegin - inside selected tag, at the end of innerText
+  <em>Statement: element.insertAdjacentHTML(position, text);</em>
+
+  - beforebegin- In front of element
+  - afterbegin - Inside selected element, at the first of innerText
+  - beforeend - Inside selected tag, at the last of innerText
+  - afterend - Outside of selected tag, after end of tag
 
 ```javascript
+<!-- beforebegin -->
+<h1>
+<!-- afterbegin -->
+Test
+<!-- beforeend -->
+</h1>
+<!-- afterend -->
+
 // Create a function for our title UI
 function title(text) {
   return `<h1>${text}</h1>`;
@@ -132,11 +142,12 @@ const container = document.querySelector(`.app`);
 container.insertAdjacentHTML(`beforebegin`, title(`Hello!`));
 ```
 
-### How to listen for user iinteractions on the page
+### How to listen for user interactions on the page
 
 - EventListeners on any element on the page
 - Types of events
   - Scrolls
+  - Media event
   - Hovers
   - Mouse movements
   - Window resize
@@ -206,7 +217,7 @@ function skipForward() {
 - <em>Other Events</em>
 
 ```javascript
-// Get a DOM collection and convert to a JS array for mapping
+// Get a DOM collection and convert to an array for mapping
 const links = Array.from(document.querySelectorAll("nav.main a"));
 
 // Add an event listener to each link to call sayHi() when clicked

@@ -9,15 +9,15 @@ categories: JavaScript
 
 - Node.js is a platform for interpreting JS code and running apps.
 
-- Google Chrome's JavaScript engine, and able to support JS as a server-side language.
+- It is Google Chrome's JavaScript engine, and able to support JS as a server-side language.
 
 ### Overview: Client-side(front-end) VS Server-side(back-end) in Web dev
 
-- Client-side : refers to the code you write that results in something the user sees in his web browser.
+- Client-side : refers to code you write that results in something the user sees in the web browser.
 
 - Sever-side : refers to code which is responsible for authenticating users on a login page, running scheduled tasks, and even ensuring that the client-side code reaches the client.
 
-- Full stack development, using JavaScript, defines the new development in which JavaScript is usezd on the server and client, as well as on devices, hardware, and architectures it didn’t exist on before.
+- Full stack development, using JavaScript, defines the new development in which JavaScript is used on the server and client, as well as on devices, hardware, and architectures it didn’t exist on before.
 
 ### Node.js Event-loop
 
@@ -28,8 +28,8 @@ categories: JavaScript
 - REPL commands (Read Eval Print Loop)
 
 - Command examples
-  - .break - Exits a block within the REPL session &rarr; if you get stuck in a block of code
-  - .editor - Opens an internal editor, ctrl-d &rarr; saves and quit the editor
+  - .break - exits a block within the REPL session &rarr; if you get stuck in a block of code
+  - .editor - opens an internal editor, ctrl-d &rarr; saves and quit the editor
 
 ### Running your js file with Node.js
 
@@ -48,11 +48,11 @@ let messages = ["message A", "message B", "message C", "message D"];
 
 - For your app to stay organized and efficient, JS files need to have access to one another's contents when neccesary.
 
-- Each js files or folder containing a code library is called a <em>module</em>
+- Each js file or folder containing a code library is called a <em>module</em>
 
 ### npm
 
-- package manager for Node.js which is reponsible for managing the external packages in your application
+- Package manager for Node.js which is reponsible for managing the external packages in your application
 
 - Commands
 
@@ -87,9 +87,7 @@ let messages = ["message A", "message B", "message C", "message D"];
 
 - HTTPS : Hypertext transfer protocol secure (HTTPS) is the secure version of HTTP, which is the primary protocol used to send data between a web browser and a website
 
-- e.g. When you enter the URL , you wnat to see in your browser, an HTTP request is sent to a physical computer elsewhere; this request contains some info whether you want to load a web page or send info to that computer.
-
-**Source code**
+- e.g. When you enter the URL , you want to see in your browser, an HTTP request is sent to a physical computer elsewhere; this request contains some info whether you want to load a web page or send info to that computer.
 
 ```javascript
 const port = 3000,
@@ -99,7 +97,7 @@ const port = 3000,
   // Create the server with request and response params
   app = http.createServer((request, response) => {
     console.log("Received an incoming request!");
-    response.writeHead(httpStatus, {
+    response.writeHead(httpStatus.OK, {
       "Content-Type": "text/html",
     });
     // Write the response to the client
@@ -121,7 +119,7 @@ console.log(`The server has started and is listening on port number: ${port}`);
 
 **Callbacks on the server indicate when to respond to the server**
 
-1. Multiple clients may take a series of requests to the server
+1. Multiple clients may take a series of requests to the server.
 2. As requests are received by the server, they are processed asynchronously.
 3. The server takes time to process each individual request. A callback may signal when a response is ready.
 4. Responses may not be returned in the order requests are received.
@@ -149,8 +147,8 @@ console.log(`The server has started and is listening on port number: ${port}`);
 **How you are going to build your routes**
 
 - Routing is the way for your app to determine how to respond to a requesting client.
-- Some routes are designed by matching the URL in the request object
-- Each request has url property
+- Some routes are designed by matching the URL in the request object.
+- Each request has url property.
 
 ```javascript
 // This code will have a server object that has a callback function, (req,res) => {}
@@ -168,6 +166,7 @@ app.on("request", (req, res) => {
   console.log("header" + req.headers);
 
   const getJSONString = (obj) => {
+    // @params object, replacer, spaces
     return JSON.stringify(obj, null, 2);
   };
 
