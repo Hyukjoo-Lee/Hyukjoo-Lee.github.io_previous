@@ -109,7 +109,7 @@ categories: Android Studio
 - e.g. If you want to display a location on a map, you can ask another app with that feature.
 
 **Example app**
-<img src="./images/android_ImplicitIntent.png">
+<img src="https://github.com/Hyukjoo-Lee/Hyukjoo-Lee.github.io/blob/main/_posts/images/android_ImplicitIntent.png?raw=true">
 
 **Source Code**
 

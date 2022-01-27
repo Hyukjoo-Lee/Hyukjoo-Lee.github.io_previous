@@ -72,7 +72,7 @@ let messages = ["message A", "message B", "message C", "message D"];
 
 **Node.js application structure with node_module**
 
-![node.js structure image](./images/node.jsstructure.png "node.js structure")
+![node.js structure image](https://github.com/Hyukjoo-Lee/Hyukjoo-Lee.github.io/blob/main/_posts/images/node.jsstructure.png?raw=true "node.js structure")
 
 ### Building a simple web server in node.js
 
