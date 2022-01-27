@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "2022-01-24-JavaScript_DOM Manipulation"
-date: 2022-01-26 19:00:00
+title: "JavaScript: DOM Manipulation"
+date: 2022-01-25 16:00:00
 categories: JavaScript
 ---
 
