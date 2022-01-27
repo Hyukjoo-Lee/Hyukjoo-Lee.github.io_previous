@@ -23,7 +23,7 @@ categories: JavaScript
 
 - Operates on an event loop using a single thread.
 
-![node.js_loop Image](images/node.js_loop.png "node.js_loop Image")
+![node.js_loop Image](https://github.com/Hyukjoo-Lee/Hyukjoo-Lee.github.io/blob/main/_posts/images/node.js_loop.png?raw=true "node.js_loop Image")
 
 - REPL commands (Read Eval Print Loop)
 
@@ -72,7 +72,7 @@ let messages = ["message A", "message B", "message C", "message D"];
 
 **Node.js application structure with node_module**
 
-![node.js structure image](node.jsstructure.png "node.js structure")
+![node.js structure image](./images/node.jsstructure.png "node.js structure")
 
 ### Building a simple web server in node.js
 
