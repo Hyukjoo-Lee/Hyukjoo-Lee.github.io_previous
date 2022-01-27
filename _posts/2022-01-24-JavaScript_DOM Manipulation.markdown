@@ -202,3 +202,56 @@ function skipForward() {
   video.currentTime = video.currentTime + 10;
 }
 ```
+
+- <em>Other Events</em>
+
+```javascript
+// Get a DOM collection and convert to a JS array for mapping
+const links = Array.from(document.querySelectorAll("nav.main a"));
+
+// Add an event listener to each link to call sayHi() when clicked
+links.map((link) => link.addEventListener("click", sayHi));
+
+// The Browser API will give us the Event Object
+function sayHi(e) {
+  console.log(e);
+  e.preventDefault();
+  alert("Hi!");
+  // Logs out the Event Object
+  console.log(e);
+  console.log(this);
+  console.log(this.innerText);
+}
+
+// Will log out X and Y position of the mouse
+document.addEventListener("mousemove", logMousePosition);
+
+function logMousePosition(e) {
+  console.log(e.clientX + " x " + e.clientY);
+}
+
+// Keyboard Events Example
+document.addEventListener("keypress", logKeys);
+
+function logKeys(e) {
+  key = e.which;
+  console.log(key);
+  console.log(String.fromCharCode(key));
+}
+
+// Working with Form
+const form = document.querySelector(`form.contact`);
+form.addEventListener("submit", logFormDetails);
+
+function logFormDetails(e) {
+  e.preventDefault();
+  let name = document.querySelector(`#name`);
+  let email = document.querySelector(`#email`);
+  let message = document.querySelector(`#message`);
+
+  console.log(`Form Details:`);
+  console.log(`Name: ${name.value}`);
+  console.log(`Email: ${email.value}`);
+  console.log(`Message: ${message.value}`);
+}
+```
