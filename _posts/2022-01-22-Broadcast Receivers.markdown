@@ -180,6 +180,53 @@ case ACTION_CUSTOM_BROADCAST:
 - To create unique Intent action names for broadcasts, a common practice is to prepend the action name with your package name.
 - If your app targets API level 26 or higher, you can use dynamic receivers to receive all broadcasts.
 
+```java
+Intent intent = new Intent();
+// addFlags
+// intent.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
+intent.setAction("com.example.Broadcast");
+intent.putExtra("MyData", 1000);
+sendBroadcast(intent);
+```
+
+### Questions
+
+- <em>Question 1: What is a system broadcast?</em>
+
+  A. A message that your app sends and receives when an event of interest occurs in the app.
+  B. A message that is sent from an app to a different component of the same app.
+  C. A message that the Android system sends when a system event occurs.
+  D. A message that the Android system receives when an event of interest occurs in your app.
+
+- <em>Question 2: Which pair of methods do you use to register and unregister your broadcast receiver dynamically?</em>
+
+  A. registerBroadcast() and unRegisterBroadcast().
+  B. registerComponentCallbacks() and unRegisterComponentCallbacks().
+  C. registerBroadcastReceiver() and 4. unRegisterBroadcastReceiver().
+  D. registerReceiver() and unRegisterReceiver().
+
+- <em>Question 3: Which of the following are true?</em>
+
+  A. Broadcast receivers can't see or capture the intents used to start an activity.
+  B. Using a broadcast intent, you can't find or start an activity.
+  C. You can use a broadcast intent to start an activity.
+  D. You can receive the intent used to start activity in your broadcast receiver.
+
+- <em>Question 4
+  Which class is used to mitigate the security risks of broadcast receivers when the broadcasts are not cross-application (that is, when broadcasts are sent and received by the same app)?</em>
+
+  A. SecureBroadcast
+  B. LocalBroadcastManager
+  C. OrderedBroadcast
+  D. SecureBroadcastManager
+
+  **Answers**
+
+  1. C
+  2. D
+  3. D
+  4. B
+
 <em>Reference</em>
 
 [broadcast-receivers][broadcast-receivers]
