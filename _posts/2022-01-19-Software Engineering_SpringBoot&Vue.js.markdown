@@ -15,17 +15,17 @@ categories: Software Engineering
 
 **웹 서비스의 동작원리**
 
-클라이언트(서비스를 사용하는 프로그램 및 컴퓨터)와 서버(서비스를 제공하는 프로그램 및 컴퓨터)의 요청과 응답
+Clients(A program or computer that is using a service) and Sever(A program or computer that provides the service)
 
 **뷰 템플릿과 MVC 패턴**
 
+Model: 데이터(data)
 View Templates: 화면출력(Presentation)
 Controller: 처리과정(logic)
-Model: 데이터(data)
 
 **MVC의 역할과 실행흐름**
 
-Controller : 클라이언트의 요청을 받음
+Controller : Receive requests from clients
 
 package com.example.firstproject.controller;
 
