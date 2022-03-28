@@ -16,39 +16,40 @@ categories: JavaScript
 ### NoSQL Databases (SQL VS NOSQL)
 
 - SQL - Structured data schema(Strict) & data is set to several tables linked with a 'relationship'
-- NoSQL - No Schema, No relationship, and Json-like data format
+- NoSQL - No Schema, No relationship, and JSON-like data format
 
 #### Commands
 
-- Use {dbname} – Create db (if it doesn’t exist) & switch to specific db
-  You won’t see your new database in the list of databases until data is added.
+- use {dbname}: Create db (if it doesn’t exist) & switch to a specific db &rarr; Note that you won’t see your new database in the list of databases until data is added.
 
-- Specify a collection name: data model, storing all documents related to that model within the same grouping.
-  e.g. within recipe app (db), contacts (colllection), and data (documents)
+- Specify a collection name = data model: storing all documents related to that model within the same group.
 
-- Insert
-  db.inventory.insertOne
-  db.inventory.insertMany
+e.g. within recipe app(db) , there is a group (collection) named as 'contacts', and its data (documents)
 
-- Find
-  find({key:”value”}) / findOne or findMany
-  db.contacts.find({\_id: ObjectId("6241cb3b6d1c4b70d50a75b1")})
-  db.contacts.find({name:"Jon"})
+- Insert:
+
+  - db.inventory.insertOne
+  - db.inventory.insertMany
+
+- Find:
+
+  - find({key:”value”}) - findOne - findMany
+    db.contacts.find({id: ObjectId("6241cb3b6d1c4b70d50a75b1")})
+    db.contacts.find({name:"Jon"})
 
 - Delete
-  db.collection.deleteMany()
-  db.collection.deleteOne()
+
+  - db.collection.deleteMany()
+  - db.collection.deleteOne()
 
 - Update
-  What is the use of set in MongoDB?
-  In MongoDB, the $set operator is used to replace the value of a field to the specified value.
+  - What is the use of 'set' in MongoDB?
+    - In MongoDB, the $set operator is used to replace the value of a field to the specified value.
 
 ```javascript
 Syntax: , { $set: { <field1>: <value1>, ... } }
 db.contacts.update({name:"jon wexler"}, {$set:{email:”jonjwexler@gmail.com”}})
 ```
-
-### Setting up Mongoose with your Node.js application
 
 - select a db: use choose_db
 - show all dbs: show dbs
@@ -56,6 +57,8 @@ db.contacts.update({name:"jon wexler"}, {$set:{email:”jonjwexler@gmail.com”}
 - show all records in a db: use choose_db then db.users.find()
 - delete a db: use choose_db then db.dropDatabase()
 - to see which db is being used: db
+
+### Setting up Mongoose with your Node.js application
 
 #### Index.js (main.js)
 
@@ -106,14 +109,14 @@ const pj = new User({
 
 const hj = new User({
   name: "Hyukjoo Lee",
-  email: "jaydon.lee@gmail.com",
+  email: "lee@gmail.com",
   fav_pizza: "Pepperoni",
   personalities: ["Dedicated", "Detailed"],
 });
 
 const cr = new User({
   name: "Chaeryeong Kim",
-  email: "k95c03r13@gmail.com",
+  email: "kcr@gmail.com",
   fav_pizza: "Hawaiian",
   personalities: ["Spontaneous", "Energetic"
 });
@@ -143,11 +146,11 @@ app.listen(() => {
 
 ```
 
-### Creating a schema
+#### Creating a schema
 
 - As mentioned, MongoDB itself is a schema-less database. However, Mongoose enforces schemas on our behalf to help maintain data integrity.
 
-ORM – Object Relational Mapping
+- Note that MongoDB has ORM (Object Relational Mapping)
 
 #### Read.js
 
