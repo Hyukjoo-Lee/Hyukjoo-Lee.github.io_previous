@@ -25,9 +25,10 @@ Controller: 처리과정(logic)
 
 **MVC의 역할과 실행흐름**
 
-Controller : Receive requests from clients
+#### Controller
 
-package com.example.firstproject.controller;
+- Receive requests from clients and deal with them
+- Define the ways how to deal those requests from client-side
 
 ```java
 import org.springframework.stereotype.Controller;
@@ -45,7 +46,9 @@ public class FirstController {
 }
 ```
 
-View: 최종 페이지를 만들어 주고
+#### View
+
+- 최종 페이지를 만들어 주고
 
 ```html
 <!DOCTYPE html>
@@ -60,25 +63,16 @@ View: 최종 페이지를 만들어 주고
 </html>
 ```
 
-Model: 데이터를 뷰에게 전달 함
+#### Model
 
-```java
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+- 데이터를 뷰에게 전달 함
 
-@Controller
-public class FirstController {
+- DAO(Data Access Object) : DB 에서 값을 가져와 domain object에 return OR domain object 에서 값을 가져와서 DB에 return
 
-	@GetMapping("/hi")
-	public String niceToMeetYou(Model model) {
-		model.addAttribute("username", "이혁주"); // 데이터 등록 -> 뷰페이지 에서 사용 가능
-		return "greetings"; // temlplates/greeting.mustache -> 브라우저로 전송
-	}
-}
-```
+- Model 에 값과 값의 타입을 입력 (private Long id) -> Return corresponding data
 
-**Few Spring project dependencies (tools)**
+- <em>Repository</em> : JPA 에서 Repo interface 를 생성하고 JpaRepository<Entity, {type}> 을 extends 하면 CRUD 가 자동적으로 생성
+- **Few Spring project dependencies (tools)**
 
 1. Spring Boot DevTools
    When the code for the contents transmitted to the browser is changed, the application is <b>automatically restarted to update the browser</b>'.
