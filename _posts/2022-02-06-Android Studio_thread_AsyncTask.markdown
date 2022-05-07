@@ -10,7 +10,7 @@ categories: Android Studio
 - Independent path of execution in a running program
 - Code is executed line by line
 - App runs on Java Thread called 'main' or 'UI thread'
-- Draws UI ont the screen
+- Draws UI on the screen
 - Responds to user actions by handling UI events
 
 ### ANR (Application Not Responding)
@@ -189,6 +189,42 @@ private WeakReference<TextView> mTextView;
 }
 
 
+
+```
+
+### Private Notes In Korean
+
+```java
+/**
+ * - 비동기 작업을 위한 AsyncTask -
+ * 'As the Main thread plays the most important role in an app (rendering a view & handling events),
+ * other codes that are able to affect the main thread should be operated separately.'
+ *
+ * Synchronous - wait for everything to be done
+ * Asynchronous - execute the next code immediately, not waiting for..
+ *
+ * 예를들어 정말 큰 파일을 읽는데 시간이 오래 걸린다면..
+ * 기다리는 동안 메인스레드가 다른 이벤트들을 처리하지 못하게 되고,
+ * 최악의 경우 앱 실행이 중지 되는 경우도 발생
+ *
+ * 개발자는 오래 걸리는 task 를 별도의 thread 에서 처리하게 만들 수 있음.
+ * "메인 스레드의 실행에 영향을 줄 수 있는 기능을 새로운 스레드에서 실행하고,
+ * 기능이 완료되면 메인 스레드 핸들러로 메시지를 전달한다."
+ *
+ * 실행 - 비동기(Asynchronous) 작업 준비 및 시작
+ * 백그라운드 작업(doInBackground) : 백그라운드 스레드에서 비동기(Asynchronous) 작업 실행
+ * 진행 상황 업데이트(onProgressUpdate) : 백그라운드 스레드 진행 상황을 메인스레드로 전달
+ * 비동기 실행 완료 후 처리(onPostExecute) : 백그라운드 스레드 완료 후 메인스레드에 완료 상태 전달
+ *
+ * onPreExecute -> doInBackground -> onProgressUpdate -> onPostExecute
+ */
+
+    /**
+     *     extends AsyncTask<Params, Progress, Result>
+     *     Params: AsyncTask 실행에 필요한 파라미터
+     *     Progress: 현재 작업 진행 정보를 나타내는 상태 값
+     *     Result: 작업의 실행이 완료된 후의 최종 결과
+     */
 
 ```
 
