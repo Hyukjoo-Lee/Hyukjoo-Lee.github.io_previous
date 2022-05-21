@@ -189,7 +189,6 @@ private WeakReference<TextView> mTextView;
 }
 
 
-
 ```
 
 ### Private Notes In Korean
