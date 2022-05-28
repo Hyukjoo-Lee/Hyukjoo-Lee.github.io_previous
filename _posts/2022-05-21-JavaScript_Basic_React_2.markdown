@@ -171,3 +171,72 @@ const root = document.getElementById("root");
   ReactDOM.render(<App />, root);
 
 ```
+
+
+### State 2
+
+```javascript
+<script type="text/babel">
+/* 
+    1. 분을 초로, 초를 분으로 자동으로 변환하는 Converter 를 만들 것
+    2. state 활용
+    3. onChange function; one in charge of basically updating the data
+    4. flip & reset function
+    5. disabled property 활용
+  */
+  function App() {
+
+    const [amount, setAmount] = React.useState(0);
+    const [flipped, setFlipped] = React.useState(false);
+
+    const onChange = (event) => {
+      /*console.log(event.target.value);*/
+      setAmount(event.target.value);
+    }
+
+    const reset = () => setAmount(0);
+
+    const onFlip = () => {
+      reset();
+      setFlipped((current) => !current);
+    }
+
+    return (
+      <div>
+        <div>
+          <h1> Super Converter </h1>
+          <label htmlFor="minutes">Minutes</label>
+          <input
+            // 조건부 연산자 '?' - 물음표 연산자
+            // condition ? val1 : val 2 => condition 이 true 면, val1 otherwise val2 
+            value={flipped ? amount * 60 : amount}
+            id="minutes"
+            placeholder="Minutes"
+            type="number"
+            onChange={onChange}
+            /* Make comparison */
+            disabled={flipped}
+          />
+        </div>
+        <div>
+          <label for="hours">Hours</label>
+          <input
+            value={flipped ? amount : Math.round(amount / 60)}
+            id="hours"
+            placeholder="Hours"
+            type="number"
+            onChange={onChange}
+            disabled={!flipped} />
+        </div>
+        <button onClick={reset}>RESET</button>
+        <button onClick={onFlip}>FLIP</button>
+      </div>
+    )
+  }
+
+
+  const root = document.getElementById("root");
+  ReactDOM.render(<App />, root);
+
+</script>
+```
