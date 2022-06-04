@@ -75,10 +75,9 @@ categories: JavaScript
 - React is only a library for creating and updating HTML elements in your UI.
 - React provides the createElement function to create and return elements
 - createElement has THREE arguments
-
-  - 1. Type of element; usually a string which represents an HTML element or a tag (e.g. h1 element)
-  - 2. Object containing any attributes and value you want to give the element; can pass an empty object, or the value null.
-  - 3. Contents or children of the element
+    - Type of element; usually a string which represents an HTML element or a tag (e.g. h1 element)
+    - Object containing any attributes and value you want to give the element; can pass an empty object, or the value null.
+   - Contents or children of the element
   
 - React does not create actual DOM; it is an object representation of a DOM node
 - It has several properties like key, props, and ref
