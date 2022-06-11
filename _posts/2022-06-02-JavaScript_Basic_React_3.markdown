@@ -139,3 +139,59 @@ function App() {
 export default App;
 
 ```
+
+
+### CleanUp function
+  - It is not used commonly, but it is good to know for you
+  - A function which runs when a component is destroyed
+  - Basically, We return a function with an useEffect function 
+
+#### Source Code
+
+```javascript
+import { useState, useEffect } from "react";
+
+/**
+  <extra> 
+  Cleanup function =
+  어떠한 component 가 destroyed 될 때 실행되는 function
+ */
+
+function Hello() {
+
+  // function destroyedFn() {
+  //   console.log("bye :( ")
+  // };
+
+  // function effectFn() {
+  //   console.log("I am Here");
+  //   return destroyedFn;
+  // };
+
+  // useEffect(effectFn, []);
+
+  // Make that codes shorter
+  useEffect(() => {
+    console.log("hi :)");
+    return () => console.log("bye :)");
+  })
+
+  return <h1>Hello</h1>;
+}
+
+function App() {
+
+  const [showing, setShowing] = useState(false);
+  const onClick = () => setShowing((prev) => !prev);
+
+  return (
+    <div>
+      {showing ? <Hello /> : null}
+      <button onClick={onClick}>{showing ? "Hide" : "Show"}</button>
+    </div>
+  );
+}
+
+export default App;
+
+```
