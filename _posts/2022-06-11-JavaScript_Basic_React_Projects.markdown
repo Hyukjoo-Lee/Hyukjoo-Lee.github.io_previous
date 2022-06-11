@@ -10,6 +10,9 @@ categories: JavaScript
 ### 1. ToDo List
 
 #### What I learned
+- Three dots(...) in JavaScript : is called the Spread Syntax or Spread Operator. 
+    - This allows an iterable such as an array expression 
+    - ...array => means all elements in an array
 - Do not modify the status directly. Use a function that modifies the state; State must always be 'New'!
 - The map function takes all elements of the array and converts them into a new array.
     - If there are six elements in the array, a function is executed six times.
