@@ -90,8 +90,8 @@ export default App;
 - For example, when we get the data from the API, it is better to get API only once.
 - There are two arguments
     - useEffect(1ST, [ 2ND ])
-        1) 1st Argument: A function which allows you running 'ONE' specific function at once a time.
-        2) 2nd Argument: one OR more states that tells react.js 'if a specific state 'keyword' changes, run a function that is stated in 1st argument.
+        - 1st Argument: A function which allows you running 'ONE' specific function at once a time.
+        - 2nd Argument: dependencies = things that React.js should watch = one OR more states that tells react.js 'if a specific state 'keyword' changes, run a function that is stated in 1st argument.
 
 #### Source Code
 ```javascript
