@@ -72,3 +72,63 @@ function App() {
 
 export default App;
 ```
+
+### 2. Coin Tracker
+
+#### What I learned
+- Fetching API and get the data in json format
+- Getting selected value using onChange; 원하는 값을 value={} 에 대입
+- handleInput
+
+
+```javascript
+import { useState, useEffect } from "react";
+
+function App() {
+  const [loading, setLoading] = useState(true);
+  const [coins, setCoins] = useState([]);
+  const [cost, setCost] = useState(1);
+  const [amount, setAmount] = useState(1);
+  
+
+  const onChange = (event) => {
+    setCost(event.target.value);
+  }
+
+  const handleInput = (event) => {
+    setAmount(event.target.value);
+  }
+
+  useEffect(() => {
+    fetch("https://api.coinpaprika.com/v1/tickers?limit=10")
+      .then((response) => response.json())
+      .then((json) => {
+        setCoins(json);
+        setLoading(false);
+      });
+  }, []);
+
+  return (
+    <div>
+      <h1>The coins! {loading ? "" : `${coins.length} coins here`}</h1>
+      {loading ? <strong>loading...</strong> : <select onChange={onChange}>
+        <option>Select Coin!</option>
+        {coins.map((coin, index) =>
+          <option
+            key={index}
+            value={coin.quotes.USD.price}
+            id={coin.symbol}
+            symbol={coin.symbol} >
+            {coin.name}({coin.symbol}) : {coin.quotes.USD.price} USD
+          </option>
+        )}
+      </select>}
+      <h2>Please enter the amount</h2>
+      <div>
+        <input type="number" value={amount} onChange={handleInput} />$
+      </div>
+      <h2>You can get {amount / cost} {symbol}</h2>
+    </div>);
+}
+export default App;
+```
